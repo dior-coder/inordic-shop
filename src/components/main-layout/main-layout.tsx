@@ -15,7 +15,7 @@ export function MainLayout(){
         }, 
         {
             text: 'Товары',
-            link: '/goods'
+            link: '/goods',
         },
         {
             text: 'Пользователи',
