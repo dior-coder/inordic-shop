@@ -4,6 +4,7 @@ import {
 import { MainLayout } from '../../components/main-layout'
 import { Main } from '../../pages/main'
 import { GoodList } from '../../components/good-list'
+import { Basket } from '../../pages/basket'
 /**
  * Router - утилс который опредяет маршруты приложения
  * Маршруты:
@@ -24,9 +25,15 @@ export const Router = createBrowserRouter(
                             index: true,
                             element: <GoodList />,
                         },
-    
-                ]
-            }
+                    
+                            ],
+                
+                
+                },
+                {
+                    path: '/basket',
+                    element: <Basket/>
+                }
             ]
         }
     ]

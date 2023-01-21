@@ -1,38 +1,39 @@
+import { type } from "os";
 import React from "react";
+import { Link } from "react-router-dom";
+import { buttonsAndLinks } from "./i-menu";
+import { iMenu } from "./i-menu";
+import { StyledMenu } from "./menu-style";
+import { StyledList } from "./menu-style";
 
-interface iMenu3{
-    icon: string
-    text: string
-    link: string
-}
-
-/* 
-interface iMenu2{
-    buttons : [iMenu3]
-    links : [iMenu3]
-}
-
-interface iMenu{
-    menu: iMenu2
-}
-*/
-
-export function Menu({menu: {buttons, links}} : any){
+export function Menu({menu: {buttons, links}} : iMenu){
     return (
-        <>
+        <StyledMenu>
 
-        <div>
+        <StyledList>
             {
-                links.map((link : any) => <>{link.text}</>)
+                links.map((link : buttonsAndLinks, index: number) => 
+                <li key={link.text + index}>
+                    <Link to={link.link}>
+                        {link.text}
+                    </Link>
+                </li>) //
             }
-        </div>
+        </StyledList>
 
-        <div>
+        <StyledList type='buttons'>
             {
-                buttons.map((button : any) =>   <>{button.text}</>)
-            }
-        </div>
+                buttons.map((button : buttonsAndLinks, index: number) => 
+                <li key={button.text + index}>
+                <Link to={button.link}>
 
-        </>
+                    {button.text}
+
+                    </Link>
+                </li>) //
+            }
+        </StyledList>
+
+        </StyledMenu>
     )
 }
