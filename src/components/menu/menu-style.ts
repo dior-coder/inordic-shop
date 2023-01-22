@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled , {css} from "styled-components"
 
 export const StyledMenu = styled.div
         `
@@ -25,18 +25,24 @@ export const StyledList = styled.ul<iStyledList>
         li{
             margin: 0 3px;
             border-bottom: 1px solid white;
+            margin-right: ${prop => prop.type === 'buttons' ? '30px' : '25px'};
             &:hover{
                 border-radius: 1px solid #fdc931;
+                box-shadow: rgba(240, 46, 170, 0.4) 
+                5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 
+                15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
             }
         a{
-            color: unset;
             text-decoration: none;
-            color: ${prop => prop.type === 'buttons' ? '#2a284f' : null};
-            background: ${prop => prop.type === 'buttons' ? 'white' : null};
-            border: ${prop => prop.type === 'buttons' ? '1px solid white' : null};
-            border-radius: ${prop => prop.type === 'buttons' ? '5px' : null};
-            padding: ${prop => prop.type === 'buttons' ? '5px' : null};
+            ${props => props.type === 'buttons' ? css`
+            color: #2a284;
+            background: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 5px;
+            `:css`
+            color:white
+            `
+            }
         }
-        margin-right: ${prop => prop.type === 'buttons' ? '25px' : '5px'};
-        }
-        `
+`

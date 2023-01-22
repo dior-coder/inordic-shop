@@ -1,10 +1,13 @@
 import React from "react"
 
 
-export function GoodItem(){
+export function GoodItem({data}: any){
     return(
         <>
-        GoodItem
+        <img src={data.IMG}/>
+        {data.TITLE}
+        {data.DISCR}
+        {data.PRICE}
         </>
     )
 }
