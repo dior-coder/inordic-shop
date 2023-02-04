@@ -1,18 +1,21 @@
 import { 
     createBrowserRouter,
 } from 'react-router-dom'
-import { MainLayout } from '../../components/main-layout'
-import { Main } from '../../pages/main'
-import { GoodList } from '../../components/good-list'
-import { Basket } from '../../pages/basket'
-import { GoodItem } from '../../components/good-item'
+
+import {MainLayout} from '../../components/main-layout'
+import {GoodList} from '../../components/good-list'
+import {GoodItem} from '../../components/good-item'
+
+import {Main} from '../../pages/main'
+import {Basket} from '../../pages/basket'
+import {Detail} from '../../pages/detail'
+
+
 /**
  * Router - утилс который опредяет маршруты приложения
  * Маршруты:
- * Основной - '/': Отображается компонент Main (Основная страница)
- * Товары - '/goods': Отображается компонент Goods (товары)
  */
-export const Router = createBrowserRouter(
+ export const Router = createBrowserRouter(
     [
         {
             element: <MainLayout />,
@@ -20,24 +23,20 @@ export const Router = createBrowserRouter(
                 {
                     path: '/',
                     element: <Main />,
-
                     children: [
                         {
                             index: true,
-                            element: <GoodList />,
+                            element: <GoodList />
                         },
                         {
                             path: '/goods/:id',
-                            element: <GoodItem/>
+                            element: <Detail />
                         },
-                    
-                            ],
-                
-                
+                    ]
                 },
                 {
                     path: '/basket',
-                    element: <Basket/>
+                    element: <Basket />
                 }
             ]
         }

@@ -1,14 +1,18 @@
-import React from "react"
-import { Outlet } from "react-router-dom"
-import {HelloBlock , SearchBlock} from './components'
+import { Outlet, useLocation } from 'react-router-dom'
 
+import {HelloBlock, SearchInput} from './components'
 
-export function Main() : JSX.Element{
-    return(
+export function Main() : JSX.Element {
+    const { pathname } = useLocation()
+    return (
         <>
-        <HelloBlock/>
-        <SearchBlock/>
-        <Outlet />
+            {pathname === '/' && (
+                <>
+                    <HelloBlock />
+                    <SearchInput />
+                </>
+            )}
+            <Outlet />
         </>
     )
 }

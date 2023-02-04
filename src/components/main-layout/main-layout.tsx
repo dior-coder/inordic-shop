@@ -9,48 +9,36 @@ export function MainLayout(){
 
     const [menu, setMenu] = useState({
         links: [
-        {
+            {
                 text: 'Главная',
                 link: '/'
-        },
-        {
-            text: 'О нас',
-            link: '/'
-        },
-        {
-            text: 'Контакты',
-            link: '/'
-        },  
-        {
-            text: 'Товары',
-            link: '/goods',
-        },
-        {
-            text: 'Пользователи',
-            link: '/users'
-        },
-        {
-            text: 'Отзывы',
-            link: '/reviews'
-        },   
-                 ],
+            },
+            {
+                text: 'О нас',
+                link: '/'
+            },
+            {
+                text: 'Контакты',
+                link: '/'
+            }
+        ],
         buttons: [
             {
-                icons: 'https://img.icons8.com/3d-fluency/512/shopping-cart-loaded.png',
+                icon: 'https://img.icons8.com/fluency/512/full-recycle-bin.png',
                 text: 'Корзина',
                 link: '/basket'
             },
             {
-                icons: 'https://img.icons8.com/3d-fluency/512/shopping-cart-loaded.png',
-                text: 'Авторизация',
+                icon: 'https://img.icons8.com/fluency/512/full-recycle-bin.png',
+                text: 'Авторизаия',
                 link: '/auth'
             },
             {
-                icons: 'https://img.icons8.com/3d-fluency/512/shopping-cart-loaded.png',
+                icon: 'https://img.icons8.com/fluency/512/full-recycle-bin.png',
                 text: 'Регистрация',
                 link: '/reg'
-            },
-                  ]
+            }
+        ]
     })
 
     return(

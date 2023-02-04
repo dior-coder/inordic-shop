@@ -1,11 +1,11 @@
 import goodJSON from '../../stub/goods.json'
-import {StyledListLi , StyledMenuUl} from '../../components/good-list/style'
+import {StyledListLi , StyledListUl} from '../../components/good-list/style'
 import {iGood} from '../../components/good-list/types'
 
 
 export function Goods(){
     return (
-        <StyledMenuUl>
+        <StyledListUl>
         {
             goodJSON.map( (good: iGood , index: number) => (
                     <StyledListLi key={good.TITLE + index}>
@@ -13,6 +13,6 @@ export function Goods(){
                     </StyledListLi>
             ))
         }
-    </StyledMenuUl>
+    </StyledListUl>
     )
     }

@@ -3,7 +3,9 @@ import React from 'react'
 export function Auth(){
     return (
         <>
-        Auth
+        <h1>
+            Авторизация
+        </h1>
         </>
     )
 }

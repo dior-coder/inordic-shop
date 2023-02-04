@@ -1,0 +1,1 @@
+export { StyledDetail } from './detail.style'

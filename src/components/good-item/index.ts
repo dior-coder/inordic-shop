@@ -1,1 +1,1 @@
-export {GoodItem} from './good-item'
+export { GoodItem } from './good-item'

@@ -2,6 +2,10 @@ import React from 'react'
 
 export function Reg(){
     return (
-        <>Reg</>
+        <>
+        <h1>
+            Регистрация
+        </h1>
+        </>
     )
 }

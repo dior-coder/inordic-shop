@@ -1,3 +1,3 @@
 import {iGood} from './i-good'
 
-export type iGoods = iGood[]
+export type iGoods = iGood[] 

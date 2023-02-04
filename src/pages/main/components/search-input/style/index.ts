@@ -1,0 +1,1 @@
+export { StyledSearchInput } from './search-input.style'
