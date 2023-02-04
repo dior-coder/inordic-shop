@@ -5,5 +5,5 @@ export type iGood = {
     PRICE: string,
     IMG: string,
     COUNT: string,
-    COUNT_IN_BASKET?: string, 
+    COUNT_IN_BASKET?: any 
 }
