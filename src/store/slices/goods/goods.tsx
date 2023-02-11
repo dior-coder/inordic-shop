@@ -1,22 +1,45 @@
-import { createSlice } from '@reduxjs/toolkit'
-
-
-import { iGood } from '../../../components/good-list/types' 
-import { iPayload } from '../types' 
-import { createInitialState } from '../../state/goods'
+import { createSlice } from '@reduxjs/toolkit';
 import { createExtraReducers } from '../../reducers/goods/goods'
+import { createInitialState } from '../../state/goods'
 import { createExtraActions } from '../../actions/goods'
-
-const extraActions: {
-  getAllGoods: any, 
-  addToBasket: any, 
-  changeCountGoodInBasket: any,
-  delFromBasket: any,
-} = createExtraActions()
 
 const name = 'goods';
 
+const extraActions: {getAllGoods: any, addToBasket: any} = createExtraActions()
+
+export type iPayload = {
+  payload?: any,
+  type: string
+}
+
 export const slice = createSlice({ 
+    name, 
+    initialState: createInitialState(),
+    reducers: createExtraReducers(),
+    extraReducers: (builder) => {
+      builder
+      .addCase(extraActions.getAllGoods.pending, (state, action) => {
+        console.log('getAllGoods pending', action)
+        //state.goods.list === requestId
+      })
+      .addCase(extraActions.getAllGoods.fulfilled, (state, action) => {
+        console.log('getAllGoods fulfilled', action)
+        state.list = action.payload
+      })
+      .addCase(extraActions.getAllGoods.rejected, (state, action) => {
+        console.log('getAllGoods rejected', action)
+      })
+  },
+});
+
+export const goodsActions = { ...slice.actions, ...extraActions };
+
+export const { addToBasketReducer } = slice.reducer as any;
+
+//редьюсеры по умолчанию
+export default slice.reducer;
+/*
+       export const slice = createSlice({ 
     name, 
     initialState: createInitialState(),
     reducers: createExtraReducers(),
@@ -90,10 +113,18 @@ export const slice = createSlice({
           console.log('Сработал addCase GET_ALL_GOOD extraReducers')
           state.list = action.payload
         })
-        */
-       .addCase(extraActions.getAllGoods.pending, (state, action: iPayload) => {
-          console.log('action', action)
-       })
+        
+        .addCase(extraActions.getAllGoods.pending, (state, action) => {
 
-      },
-});
+        })
+         .addCase(extraActions.getAllGoods.fullFilled, (state, action) => {
+  
+        })
+         .addCase(extraActions.getAllGoods.rejected, (state, action) => {
+            state.list = action.payload
+        })
+            },
+  });
+  
+  export const goodsAction = {...slice.actions, ...extraActions}
+  */

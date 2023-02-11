@@ -1,17 +1,15 @@
 /**
  * Заглушка, чтобы редакс работал без ошибок
  */
+import {createExtraActions} from '../../actions/goods'
+
 export function createExtraReducers() {
 
     return {
-        ...getAll,
+        ...getAllGoods,
     };
 
-    function getAll() {
-
-        return {
-            
-        }
+    function getAllGoods() {
         
     }
 }
