@@ -9,7 +9,7 @@ export const StyledButtons = styled.div`
         border: 1px solid #2a284f;
         color: white;
         text-decoration: none;
-        background: #21D190;
+        background: #2a284f;
         padding: 3px;
         cursor: pointer;
         &:hover{

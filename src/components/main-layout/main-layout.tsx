@@ -15,16 +15,11 @@ export function MainLayout(){
             },
             {
                 text: 'О нас',
-                link: '/about'
+                link: '/'
             },
             {
                 text: 'Контакты',
-                link: '/contacts'
-            }
-            ,
-            {
-                text: 'Корзина',
-                link: '/basket'
+                link: '/'
             }
         ],
         buttons: [

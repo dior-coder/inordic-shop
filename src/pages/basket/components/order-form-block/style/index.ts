@@ -1,2 +1,2 @@
-export {StyledForm} from './form.styled'
-export {StyledInput} from './input.styled'
+export { StyledForm } from './form.style'
+export { StyledInput } from './input.style'
