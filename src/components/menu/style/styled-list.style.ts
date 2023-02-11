@@ -14,6 +14,7 @@ export const StyledList = styled.ul<iStyledList>`
         }
 
         a {
+            padding: 10px;
             text-decoration: none;
             ${props => props.type === 'buttons' ? css`
                     color: #2a284f; 

@@ -1,5 +1,6 @@
 // Метод createExtraActions отвечает за создание действий, оторые будут происходить с товарами и возвращать их
 import goodsJSON from '../../../stub/goods.json'
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export function createExtraActions() {
 
@@ -40,13 +41,41 @@ export function createExtraActions() {
     }
 
     //Метод для ПЕРВОНАЧАЛЬНОЙ загрузки товаров с сервера
+    /*
     function getAllGoods(){
       //Запрос к серверу
-      
+      fetch('http://localhost:3001/goods/get')
+      .then((response) => {
+          //После запроса, перерабатываем ответ в формат JSON и возвращаем
+          return response.json()
+      })
+      //data - это то что мы вернули в прошлом блоке then (response.json())
+      .then(data => {
 
-      return {
+        console.log(data)
+        return {
           type: 'GET_ALL_GOOD',
-          payload: [...goodsJSON]
+          payload: [...data]
+        }
+
+      })
+
+      //console.log(data)
+      return {
+        type: 'GET_ALL_GOOD',
+        payload: []
       }
-    }
+      }
+      */
+
+      function getAllGoods() {
+        return createAsyncThunk<any>(
+          'http://localhost:3001/goods/get',
+            //response ответ от сервера
+            async (response: any) => {
+                return response.json()
+            }
+        );
+      }   
+    
 }
